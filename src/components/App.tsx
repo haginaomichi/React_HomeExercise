@@ -1,0 +1,220 @@
+import { ChangeEvent, useState, FC } from "react";
+import styled from "styled-components";
+
+export const App: FC = () => {
+    const [number, setNumber] = useState<string>("");
+    const [menus, setMenus] = useState<string[]>([]);
+    const [Error, setError] = useState('');
+    const [kcals, setKcals] = useState<string[]>([]);
+    const [foods, setFoods] = useState<string[]>([]);
+    const [hide, setHide] = useState('1');
+
+    const onChangeNumber = (e: ChangeEvent<HTMLInputElement>) => setNumber(e.target.value);
+
+    const onClickAdd = () => {
+      const newMenus = [...menus];
+      if (menus != []){
+        newMenus.splice(0, 3);
+      };
+      setError('');
+      setKcals([]);
+      setFoods([]);
+      setHide('');
+      if (number == "1"){
+        newMenus.push('地獄腹筋: 30回', '地獄背筋: 30回', '地獄腕立て: 30回');
+      } else if (number == "2"){
+        newMenus.push('大変腹筋', '大変背筋', '大変腕立て');
+      } else if (number == "3"){
+        newMenus.push('腹筋', '背筋', '腕立て');
+      } else if (number == "4"){
+        newMenus.push('鬼フィットネス', '鬼ヨガ', '鬼ランニング');
+      } else if (number == "5"){
+        newMenus.push('フィットネス', 'ヨガ', 'ランニング');
+      } else if (number == "6"){
+        newMenus.push('楽フィットネス', '楽ヨガ', '楽ランニング');
+      } else {
+        setMenus([]);
+        setError("▲");
+      }
+      setMenus(newMenus);
+    };
+
+    const onClickComplete = () =>{
+      const newKcals = [...kcals];
+      const newFoods = [...foods];
+      if (number == "1"){
+        newKcals.push('1000kcal', '900kcal', '900kcal');
+        newFoods.push('ラーメン', '焼肉', 'ピザ');
+      } else if (number == "2"){
+        newKcals.push('800kcal', '700kcal', '700kcal');
+        newFoods.push('寿司', '牛丼', 'かつ丼');
+      } else if (number == "3"){
+        newKcals.push('600kcal', '500kcal', '500kcal');
+        newFoods.push('ポテトチップス', 'ビール', '天ぷら');
+      } else if (number == "4"){
+        newKcals.push('400kcal', '300kcal', '300kcal');
+        newFoods.push('ケーキ', 'パフェ', 'ワイン');
+      } else if (number == "5"){
+        newKcals.push('200kcal', '100kcal', '100kcal');
+        newFoods.push('アメ', 'マカロン', 'アップルパイ');
+      } else if (number == "6"){
+        newKcals.push('50kcal', '40kcal', '40kcal');
+        newFoods.push('チョコ', 'アイス', 'ポテトチップス');
+      }
+      setKcals(newKcals);
+      setFoods(newFoods);
+    }
+
+  return (
+    <SContainer>
+
+      <SHeader>
+        <STitle>Home Exercise</STitle>
+      </SHeader>
+
+      <SBody>
+        <SLeftBody>
+          <SSubTitle>【Choise Menu】</SSubTitle>
+          <h2>- Men -</h2>
+          <SOption>
+            <li>1. ハードワーク</li>
+            <li>2. ミドルワーク</li>
+            <li>3. ライトワーク</li>
+          </SOption>
+          <h2>- Women -</h2>
+          <SOption>
+            <li>4. ハードワーク</li>
+            <li>5. ミドルワーク</li>
+            <li>6. ライトワーク</li>
+          </SOption>
+          <SInput>
+            <label>Training No.</label>
+            <input type = "text" name = "number" value = {number} onChange = {onChangeNumber} />
+            {Error && <SError>{Error}</SError>}<br></br>
+          </SInput>
+          <button onClick = {onClickAdd}>OK</button>
+        </SLeftBody>
+
+        <SRightBody>
+          <SSubTitle>【Today's Exercise】</SSubTitle>
+          <SMenuList>
+            {menus.map((menu, index) => (
+              <li key = {menu}>
+                <SMenu><input type = "checkbox" />{index + 1}.{menu}</SMenu>
+              </li>
+            ))}
+          </SMenuList>
+          {!Error && !hide && <button onClick = {onClickComplete}>COMPLETE!</button>}
+        </SRightBody>
+      </SBody>
+
+      <SBottomBody>
+        <SSubTitle>【Exercise Effect】</SSubTitle>
+        <SEffect>
+          <SKcalList>
+            {kcals.map((kcal, index) => (
+              <li key = {kcal}>
+                <SKcal>{index + 1}.{kcal}</SKcal>
+              </li>
+            ))}
+          </SKcalList>
+          <SKcalList>
+            {foods.map((food, index) => (
+              <li key = {food}>
+                <SKcal>★{food}</SKcal>
+              </li>
+            ))}
+          </SKcalList>
+        </SEffect>
+      </SBottomBody>
+    </SContainer>
+  );
+};
+
+const SContainer = styled.div`
+  background-image: url(${process.env.PUBLIC_URL}/image_1.jpg);
+  background-size: cover;
+  text-align: center;
+  padding-bottom: 40px;
+`;
+const SHeader = styled.div`
+  margin-bottom: 10px;
+`;
+const STitle = styled.h1`
+  color: black;
+  font-size: 48px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  padding: 20px 0px;
+`;
+const SBody = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+const SLeftBody = styled.div`
+  border: solid 3px skyblue;
+  width: 365px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  border-radius: 5%;
+`;
+const SRightBody = styled.div`
+  width: 715px;
+  text-align: center;
+  border: solid 3px skyblue;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  border-radius: 3%;
+`;
+const SBottomBody = styled.div`
+  border: solid 3px skyblue;
+  height: 350px;
+  width: 1100px;
+  margin: 0px auto;
+  border-radius: 2%;
+`;
+const SSubTitle = styled.h2`
+  color: white;
+  font-size: 30px;
+`;
+const SOption = styled.ul`
+  list-style: none;
+  padding-inline-start: 0;
+`;
+const SInput = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  font-weight: bold;
+`;
+const SError = styled.p`
+  margin : 0;
+  color: red;
+  font-weight: bold;
+`;
+const SMenuList = styled.ul`
+  width: 665px;
+  list-style: none;
+  padding-inline-start: 0;
+  margin: 0 auto;
+`;
+const SMenu = styled.p`
+  color: white;
+  font-size: 32px;
+  text-align: left;
+`;
+const SEffect = styled.div`
+  display:flex;
+`;
+const SKcalList = styled.ul`
+  width: 550px;
+  list-style: none;
+  padding-inline-start: 0;
+  margin: 0 auto;
+  text-align: center;
+`;
+const SKcal = styled.p`
+  color: red;
+  font-size: 32px;
+  text-align: center;
+`;
