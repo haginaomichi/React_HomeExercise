@@ -4,10 +4,11 @@ import styled from "styled-components";
 export const App: FC = () => {
     const [number, setNumber] = useState<string>("");
     const [menus, setMenus] = useState<string[]>([]);
-    const [Error, setError] = useState('');
+    const [Error, setError] = useState("");
     const [kcals, setKcals] = useState<string[]>([]);
     const [foods, setFoods] = useState<string[]>([]);
     const [hide, setHide] = useState('1');
+    const [total, setTotal] = useState<string>("");
 
     const onChangeNumber = (e: ChangeEvent<HTMLInputElement>) => setNumber(e.target.value);
 
@@ -16,22 +17,23 @@ export const App: FC = () => {
       if (menus !== []){
         newMenus.splice(0, 3);
       };
-      setError('');
+      setError("");
       setKcals([]);
       setFoods([]);
-      setHide('');
+      setHide("");
+      setTotal("");
       if (number === "1"){
-        newMenus.push('ランニング', 'エアロビクス', '縄跳び');
+        newMenus.push("ランニング", "エアロビクス", "縄跳び");
       } else if (number === "2"){
-        newMenus.push('サイクリング', 'ランニング: ゆったり', '階段等で昇降運動');
+        newMenus.push("サイクリング", "ランニング: ゆったり", "階段等で昇降運動");
       } else if (number === "3"){
-        newMenus.push('スクワット', 'ウォーキング', 'ラジオ体操');
+        newMenus.push("スクワット", "ウォーキング", "ラジオ体操");
       } else if (number === "4"){
-        newMenus.push('エアロビクス', 'フラフープ', '階段等で昇降運動');
+        newMenus.push("エアロビクス", "フラフープ", "階段等で昇降運動");
       } else if (number === "5"){
-        newMenus.push('ストレッチ', 'ラジオ体操', '入浴');
+        newMenus.push("ストレッチ", "ラジオ体操", "入浴");
       } else if (number === "6"){
-        newMenus.push('バランスボール', 'ヨガ', 'ウォーキング');
+        newMenus.push("バランスボール", "ヨガ", "ウォーキング");
       } else {
         setMenus([]);
         setError("▲");
@@ -48,25 +50,32 @@ export const App: FC = () => {
       if (foods !== []){
         newFoods.splice(0, 3);
       };
+      setTotal("");
 
       if (number === "1"){
-        newKcals.push('330kcal', '292kcal', '370kcal');
-        newFoods.push('かつ丼（893kcal）', 'カルボナーラ（830kcal）', 'ビーフカレー（954kcal）');
+        newKcals.push("330kcal", "292kcal", "370kcal");
+        newFoods.push("かつ丼（893kcal）", "カルボナーラ（830kcal）", "ビーフカレー（954kcal）");
+        setTotal("992kcal");
       } else if (number === "2"){
-        newKcals.push('230kcal', '283kcal', '179kcal');
-        newFoods.push('サバみそ定食（687kcal）', '広島焼き（633kcal）', '麻婆豆腐（648kcal）');
+        newKcals.push("230kcal", "283kcal", "179kcal");
+        newFoods.push("サバみそ定食（687kcal）", "広島焼き（633kcal）", "麻婆豆腐（648kcal）");
+        setTotal("692kcal");
       } else if (number === "3"){
-        newKcals.push('131kcal', '145kcal', '134kcal');
-        newFoods.push('きつねうどん（382kcal）', 'ハンバーガー（300kcal）', '春巻き（369kcal）');
+        newKcals.push("131kcal", "145kcal", "134kcal");
+        newFoods.push("きつねうどん（382kcal）", "ハンバーガー（300kcal）", "春巻き（369kcal）");
+        setTotal("410kcal");
       } else if (number === "4"){
-        newKcals.push('180kcal', '105kcal', '92kcal');
-        newFoods.push('チーズバーガー（368kcal）', 'チョコケーキ（352kcal）', 'クリームあんみつ（353kcal）');
+        newKcals.push("180kcal", "105kcal", "92kcal");
+        newFoods.push("チーズバーガー（368kcal）", "チョコケーキ（352kcal）", "クリームあんみつ（353kcal）");
+        setTotal("377kcal");
       } else if (number === "5"){
-        newKcals.push('61kcal', '108kcal', '43kcal');
-        newFoods.push('肉まん（201kcal）', 'シュークリーム（209kcal）', 'たいやき（211kcal）');
+        newKcals.push("61kcal", "108kcal", "43kcal");
+        newFoods.push("肉まん（201kcal）", "シュークリーム（209kcal）", "たいやき（211kcal）");
+        setTotal("212kcal");
       } else if (number === "6"){
-        newKcals.push('66kcal', '60kcal', '79kcal');
-        newFoods.push('杏仁豆腐（125kcal）', 'みたらし団子（118kcal）', 'カフェオレ（71kcal）');
+        newKcals.push("66kcal", "60kcal", "79kcal");
+        newFoods.push("杏仁豆腐（125kcal）", "みたらし団子（118kcal）", "カフェオレ（71kcal）");
+        setTotal("205kcal");
       }
       setKcals(newKcals);
       setFoods(newFoods);
@@ -119,6 +128,7 @@ export const App: FC = () => {
         <SSubTitle>【Exercise Effect】</SSubTitle>
         <SEffect>
           <SKcalList>
+            {total && <li>合計{total}消費!!</li>}
             {kcals.map((kcal, index) => (
               <li key = {kcal}>
                 <SKcal>{index + 1}.{kcal}</SKcal>
