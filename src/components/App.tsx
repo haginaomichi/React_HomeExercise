@@ -13,7 +13,7 @@ export const App: FC = () => {
 
     const onClickAdd = () => {
       const newMenus = [...menus];
-      if (menus != []){
+      if (menus !== []){
         newMenus.splice(0, 3);
       };
       setError('');
@@ -41,7 +41,14 @@ export const App: FC = () => {
 
     const onClickComplete = () =>{
       const newKcals = [...kcals];
+      if (kcals !== []){
+        newKcals.splice(0, 3);
+      };
       const newFoods = [...foods];
+      if (foods !== []){
+        newFoods.splice(0, 3);
+      };
+
       if (number === "1"){
         newKcals.push('330kcal', '292kcal', '370kcal');
         newFoods.push('かつ丼（893kcal）', 'カルボナーラ（830kcal）', 'ビーフカレー（954kcal）');
