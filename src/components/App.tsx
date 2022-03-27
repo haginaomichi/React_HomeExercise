@@ -20,18 +20,18 @@ export const App: FC = () => {
       setKcals([]);
       setFoods([]);
       setHide('');
-      if (number == "1"){
-        newMenus.push('地獄腹筋: 30回', '地獄背筋: 30回', '地獄腕立て: 30回');
-      } else if (number == "2"){
-        newMenus.push('大変腹筋', '大変背筋', '大変腕立て');
-      } else if (number == "3"){
-        newMenus.push('腹筋', '背筋', '腕立て');
-      } else if (number == "4"){
-        newMenus.push('鬼フィットネス', '鬼ヨガ', '鬼ランニング');
-      } else if (number == "5"){
-        newMenus.push('フィットネス', 'ヨガ', 'ランニング');
-      } else if (number == "6"){
-        newMenus.push('楽フィットネス', '楽ヨガ', '楽ランニング');
+      if (number === "1"){
+        newMenus.push('ランニング', 'エアロビクス', '縄跳び');
+      } else if (number === "2"){
+        newMenus.push('サイクリング', 'ランニング: ゆったり', '階段等で昇降運動');
+      } else if (number === "3"){
+        newMenus.push('スクワット', 'ウォーキング', 'ラジオ体操');
+      } else if (number === "4"){
+        newMenus.push('エアロビクス', 'フラフープ', '階段等で昇降運動');
+      } else if (number === "5"){
+        newMenus.push('ストレッチ', 'ラジオ体操', '入浴');
+      } else if (number === "6"){
+        newMenus.push('バランスボール', 'ヨガ', 'ウォーキング');
       } else {
         setMenus([]);
         setError("▲");
@@ -42,24 +42,24 @@ export const App: FC = () => {
     const onClickComplete = () =>{
       const newKcals = [...kcals];
       const newFoods = [...foods];
-      if (number == "1"){
-        newKcals.push('1000kcal', '900kcal', '900kcal');
-        newFoods.push('ラーメン', '焼肉', 'ピザ');
-      } else if (number == "2"){
-        newKcals.push('800kcal', '700kcal', '700kcal');
-        newFoods.push('寿司', '牛丼', 'かつ丼');
-      } else if (number == "3"){
-        newKcals.push('600kcal', '500kcal', '500kcal');
-        newFoods.push('ポテトチップス', 'ビール', '天ぷら');
-      } else if (number == "4"){
-        newKcals.push('400kcal', '300kcal', '300kcal');
-        newFoods.push('ケーキ', 'パフェ', 'ワイン');
-      } else if (number == "5"){
-        newKcals.push('200kcal', '100kcal', '100kcal');
-        newFoods.push('アメ', 'マカロン', 'アップルパイ');
-      } else if (number == "6"){
-        newKcals.push('50kcal', '40kcal', '40kcal');
-        newFoods.push('チョコ', 'アイス', 'ポテトチップス');
+      if (number === "1"){
+        newKcals.push('330kcal', '292kcal', '370kcal');
+        newFoods.push('かつ丼（893kcal）', 'カルボナーラ（830kcal）', 'ビーフカレー（954kcal）');
+      } else if (number === "2"){
+        newKcals.push('230kcal', '283kcal', '179kcal');
+        newFoods.push('サバみそ定食（687kcal）', '広島焼き（633kcal）', '麻婆豆腐（648kcal）');
+      } else if (number === "3"){
+        newKcals.push('131kcal', '145kcal', '134kcal');
+        newFoods.push('きつねうどん（382kcal）', 'ハンバーガー（300kcal）', '春巻き（369kcal）');
+      } else if (number === "4"){
+        newKcals.push('180kcal', '105kcal', '92kcal');
+        newFoods.push('チーズバーガー（368kcal）', 'チョコケーキ（352kcal）', 'クリームあんみつ（353kcal）');
+      } else if (number === "5"){
+        newKcals.push('61kcal', '108kcal', '43kcal');
+        newFoods.push('肉まん（201kcal）', 'シュークリーム（209kcal）', 'たいやき（211kcal）');
+      } else if (number === "6"){
+        newKcals.push('66kcal', '60kcal', '79kcal');
+        newFoods.push('杏仁豆腐（125kcal）', 'みたらし団子（118kcal）', 'カフェオレ（71kcal）');
       }
       setKcals(newKcals);
       setFoods(newFoods);
