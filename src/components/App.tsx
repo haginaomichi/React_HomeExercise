@@ -46,7 +46,14 @@ export const App: FC = () => {
     const onClickComplete = () =>{
       if (check !== number) {
         setMenus([]);
-        setError("OKタッチ!");
+        setKcals([]);
+        setFoods([]);
+        setTotal("");
+        if (!number || number > 6 || number < 1) {
+          setError("▲");
+        } else {
+          setError("OKタッチ!");
+        }
       } else if (check === number) {
         const newKcals = [...kcals];
         if (kcals !== []){
