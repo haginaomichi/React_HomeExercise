@@ -122,7 +122,7 @@ export const App: FC = () => {
             <input type = "number" name = "number" value = {number} onChange = {onChangeNumber} />
             {Error && <SError>{Error}</SError>}<br></br>
           </SInput>
-          <button onClick = {onClickAdd}>OK</button>
+          <SButton onClick = {onClickAdd}>OK</SButton>
         </SLeftBody>
 
         <SRightBody>
@@ -134,7 +134,7 @@ export const App: FC = () => {
               </li>
             ))}
           </SMenuList>
-          {!Error && !hide && <button onClick = {onClickComplete}>COMPLETE!</button>}
+          {!Error && !hide && <SButton onClick = {onClickComplete}>COMPLETE!</SButton>}
         </SRightBody>
       </SBody>
 
@@ -183,7 +183,7 @@ const SBody = styled.div`
   justify-content: center;
 `;
 const SLeftBody = styled.div`
-  border: solid 3px skyblue;
+  border: solid 3px #00b3b3;
   width: 365px;
   margin-bottom: 20px;
   margin-right: 10px;
@@ -192,13 +192,13 @@ const SLeftBody = styled.div`
 const SRightBody = styled.div`
   width: 715px;
   text-align: center;
-  border: solid 3px skyblue;
+  border: solid 3px #00b3b3;
   margin-bottom: 20px;
   margin-left: 10px;
   border-radius: 3%;
 `;
 const SBottomBody = styled.div`
-  border: solid 3px skyblue;
+  border: solid 3px #00b3b3;
   height: 350px;
   width: 1100px;
   margin: 0px auto;
@@ -222,6 +222,25 @@ const SError = styled.p`
   margin : 0;
   color: red;
   font-weight: bold;
+`;
+const SButton = styled.button`
+display: inline-block;
+border-radius: 10%;          
+font-size: 12pt;   
+text-align: center;      
+cursor: pointer;     
+padding: 2px 4px; 
+background: #00b3b3;     
+color: #ffffff;     
+line-height: 1em;        
+transition: .3s;         
+box-shadow: 6px 6px 6px #666666;  
+border: 2px solid #00b3b3;    
+:hover {
+  box-shadow: none;        
+  color: #00b3b3;    
+  background: #ffffff;     
+}
 `;
 const SMenuList = styled.ul`
   width: 665px;
