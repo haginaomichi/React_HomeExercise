@@ -112,7 +112,7 @@ export const App: FC = () => {
           </SOption>
           <SInput>
             <label>Training No.</label>
-            <input type = "text" name = "number" value = {number} onChange = {onChangeNumber} />
+            <input type = "number" name = "number" value = {number} onChange = {onChangeNumber} />
             {Error && <SError>{Error}</SError>}<br></br>
           </SInput>
           <button onClick = {onClickAdd}>OK</button>
