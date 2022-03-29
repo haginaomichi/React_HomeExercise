@@ -118,8 +118,8 @@ export const App: FC = () => {
             <li>6. ライトワーク</li>
           </SOption>
           <SInput>
-            <label>Training No.</label>
-            <input type = "number" name = "number" value = {number} onChange = {onChangeNumber} />
+            <label>Training No.
+            <input type = "number" name = "number" value = {number} onChange = {onChangeNumber} /></label>
             {Error && <SError>{Error}</SError>}<br></br>
           </SInput>
           <SButton onClick = {onClickAdd}>OK</SButton>
@@ -130,7 +130,7 @@ export const App: FC = () => {
           <SMenuList>
             {menus.map((menu, index) => (
               <li key = {menu}>
-                <SMenu><input type = "checkbox" />{index + 1}.{menu}</SMenu>
+                <SMenu>{index + 1}.{menu}</SMenu>
               </li>
             ))}
           </SMenuList>
@@ -207,6 +207,8 @@ const SBottomBody = styled.div`
 const SSubTitle = styled.h2`
   color: white;
   font-size: 30px;
+  margin-block-start: 0;
+  margin-top: 8px;
 `;
 const SOption = styled.ul`
   list-style: none;
