@@ -15,7 +15,7 @@ type Props = {
     onClickComplete: () => void;
 };
 
-export const TrainingList: FC<Props> = props => {
+export const PTrainingList: FC<Props> = props => {
     const { number, setNumber, menus, Error, kcals, foods, hide, total, onClickAdd, onClickComplete } = props;
     const onChangeNumber = (e: ChangeEvent<HTMLInputElement>) => setNumber(e.target.valueAsNumber);
 
