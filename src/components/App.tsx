@@ -11,10 +11,9 @@ export const App: FC = () => {
     const onClickAdd = () => {
       addMenu(number);
     };
-
     const onClickComplete = () =>{
       completeMenu(number);
-    }
+    };
 
     return (
       <div>

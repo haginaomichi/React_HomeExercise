@@ -27,7 +27,7 @@ export const STrainingList: FC<Props> = props => {
     
           <SBody>
             <SLeftBody>
-              <SSubTitle>【Choise Menu】</SSubTitle>
+              <SSubTitle>【Choose Menu】</SSubTitle>
               <h2>- Men -</h2>
               <SOption>
                 <li>1. ハードワーク</li>
@@ -65,7 +65,7 @@ export const STrainingList: FC<Props> = props => {
             <SSubTitle>【Exercise Effect】</SSubTitle>
             <SEffect>
               <SKcalList>
-                {total && <li>合計{total}消費!!</li>}
+                {total && <SListTitle>合計{total}消費!!</SListTitle>}
                 {kcals.map((kcal, index) => (
                   <li key = {kcal}>
                     <SKcal>{index + 1}.{kcal}</SKcal>
@@ -73,6 +73,7 @@ export const STrainingList: FC<Props> = props => {
                 ))}
               </SKcalList>
               <SKcalList>
+                {total && <SListTitle>食事換算</SListTitle>}
                 {foods.map((food, index) => (
                   <li key = {food}>
                     <SKcal>★{food}</SKcal>
@@ -100,7 +101,7 @@ const STitle = styled.h1`
   margin-block-end: 0em;
   padding: 20px 0px;
   color: black;
-  font-size: 48px;
+  font-size: 56px;
 `;
 const SBody = styled.div`
   display: block;
@@ -112,14 +113,14 @@ const SLeftBody = styled.div`
   border-radius: 5%;
 `;
 const SRightBody = styled.div`
-  height: 350px;
+  height: 400px;
   margin: 0px auto 20px auto;
   text-align: center;
   border: solid 3px #00b3b3;
   border-radius: 3%;
 `;
 const SBottomBody = styled.div`
-  height: 710px;
+  height: 650px;
   margin: 0px auto;
   border: solid 3px #00b3b3;
   border-radius: 2%;
@@ -128,7 +129,7 @@ const SSubTitle = styled.h2`
   margin-block-start: 0;
   margin-top: 8px;
   color: white;
-  font-size: 30px;
+  font-size: 44px;
 `;
 const SOption = styled.ul`
   padding-inline-start: 0;
@@ -147,6 +148,7 @@ const SError = styled.p`
 `;
 const SButton = styled.button`
   display: inline-block;
+  margin-bottom: 10px;
   padding: 2px 4px;
   background: #00b3b3;
   text-align: center;
@@ -164,28 +166,37 @@ const SButton = styled.button`
   }
 `;
 const SMenuList = styled.ul`
-  width: 665px;
   margin: 0px auto;
   padding-inline-start: 0;
   list-style: none;
 `;
 const SMenu = styled.p`
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: left;
   color: white;
   font-size: 32px;
 `;
 const SEffect = styled.div`
-  display:block;
+  display: block;
 `;
 const SKcalList = styled.ul`
   width: 390px;
-  margin: 0px auto;
+  margin: 0px auto 20px auto;
   padding-inline-start: 0;
   text-align: center;
   list-style: none;
 `;
 const SKcal = styled.p`
-  text-align: center;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  text-align: left;
   color: red;
-  font-size: 32px;
+  font-size: 26px;
+`;
+const SListTitle = styled.li`
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: bold;
 `;

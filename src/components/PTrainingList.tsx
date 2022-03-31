@@ -27,7 +27,7 @@ export const PTrainingList: FC<Props> = props => {
     
           <SBody>
             <SLeftBody>
-              <SSubTitle>【Choise Menu】</SSubTitle>
+              <SSubTitle>【Choose Menu】</SSubTitle>
               <h2>- Men -</h2>
               <SOption>
                 <li>1. ハードワーク</li>
@@ -65,7 +65,7 @@ export const PTrainingList: FC<Props> = props => {
             <SSubTitle>【Exercise Effect】</SSubTitle>
             <SEffect>
               <SKcalList>
-                {total && <li>合計{total}消費!!</li>}
+                {total && <SListTitle>合計{total}消費!!</SListTitle>}
                 {kcals.map((kcal, index) => (
                   <li key = {kcal}>
                     <SKcal>{index + 1}.{kcal}</SKcal>
@@ -73,6 +73,7 @@ export const PTrainingList: FC<Props> = props => {
                 ))}
               </SKcalList>
               <SKcalList>
+                {total && <SListTitle>食事換算</SListTitle>}
                 {foods.map((food, index) => (
                   <li key = {food}>
                     <SKcal>★{food}</SKcal>
@@ -99,7 +100,7 @@ const STitle = styled.h1`
   margin-block-end: 0em;
   padding: 20px 0px;
   color: black;
-  font-size: 48px;
+  font-size: 56px;
 `;
 const SBody = styled.div`
   display: flex;
@@ -131,7 +132,7 @@ const SSubTitle = styled.h2`
   margin-block-start: 0;
   margin-top: 8px;
   color: white;
-  font-size: 30px;
+  font-size: 36px;
 `;
 const SOption = styled.ul`
   padding-inline-start: 0;
@@ -150,6 +151,7 @@ const SError = styled.p`
 `;
 const SButton = styled.button`
   display: inline-block;
+  margin-bottom: 10px;
   padding: 2px 4px;
   background: #00b3b3;
   text-align: center;
@@ -168,7 +170,7 @@ const SButton = styled.button`
   }
 `;
 const SMenuList = styled.ul`
-  width: 665px;
+  width: 600px;
   margin: 0 auto;
   padding-inline-start: 0;
   list-style: none;
@@ -189,7 +191,14 @@ const SKcalList = styled.ul`
   list-style: none;
 `;
 const SKcal = styled.p`
+  margin-block-start: 0em;
+  margin-block-end: 0em;
   text-align: center;
   color: red;
   font-size: 32px;
+`;
+const SListTitle = styled.li`
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: bold;
 `;
