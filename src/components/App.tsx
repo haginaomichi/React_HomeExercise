@@ -17,14 +17,13 @@ export const App: FC = () => {
     }
 
     return (
-      <>
-      <MediaQuery query="(min-width: 767px)">
-        <PTrainingList number = {number} setNumber = {setNumber} menus = {menus} Error = {Error} kcals = {kcals} foods = {foods} hide = {hide} total = {total} onClickAdd = {onClickAdd} onClickComplete = {onClickComplete}/> 
-      </MediaQuery>
-      <MediaQuery query="(max-width: 767px)">
-        {/* <PTrainingList number = {number} setNumber = {setNumber} menus = {menus} Error = {Error} kcals = {kcals} foods = {foods} hide = {hide} total = {total} onClickAdd = {onClickAdd} onClickComplete = {onClickComplete}/> */}
-        <STrainingList />
-      </MediaQuery>
-      </>
+      <div>
+        <MediaQuery query="(min-width: 767px)">
+          <PTrainingList number = {number} setNumber = {setNumber} menus = {menus} Error = {Error} kcals = {kcals} foods = {foods} hide = {hide} total = {total} onClickAdd = {onClickAdd} onClickComplete = {onClickComplete}/> 
+        </MediaQuery>
+        <MediaQuery query="(max-width: 767px)">
+          <STrainingList number = {number} setNumber = {setNumber} menus = {menus} Error = {Error} kcals = {kcals} foods = {foods} hide = {hide} total = {total} onClickAdd = {onClickAdd} onClickComplete = {onClickComplete}/>
+        </MediaQuery>
+      </div>
     );
 };
