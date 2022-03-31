@@ -86,7 +86,7 @@ export const STrainingList: FC<Props> = props => {
 };
 
 const SContainer = styled.div`
-  padding-bottom: 40px;
+  padding: 0px 10px 20px 10px;
   background-image: url(${process.env.PUBLIC_URL}/image_1.jpg);
   background-size: cover;
   background-position: 0% 90%;
@@ -107,13 +107,11 @@ const SBody = styled.div`
   justify-content: center;
 `;
 const SLeftBody = styled.div`
-  width: 430px;
   margin: 0px auto 20px auto;
   border: solid 3px #00b3b3;
   border-radius: 5%;
 `;
 const SRightBody = styled.div`
-  width: 430px;
   height: 350px;
   margin: 0px auto 20px auto;
   text-align: center;
@@ -121,7 +119,6 @@ const SRightBody = styled.div`
   border-radius: 3%;
 `;
 const SBottomBody = styled.div`
-  width: 430px;
   height: 710px;
   margin: 0px auto;
   border: solid 3px #00b3b3;
