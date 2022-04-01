@@ -27,29 +27,29 @@ export const PTrainingList: FC<Props> = props => {
     
           <SBody>
             <SLeftBody>
-              <SSubTitle>【Choose Menu】</SSubTitle>
-              <h2>- Men -</h2>
+              <SSubTitle>【メニュー選択】</SSubTitle>
+              <SGender>- Men -</SGender>
               <SOption>
                 <li>1. ハードワーク</li>
                 <li>2. ミドルワーク</li>
                 <li>3. ライトワーク</li>
               </SOption>
-              <h2>- Women -</h2>
+              <SGender>- Women -</SGender>
               <SOption>
                 <li>4. ハードワーク</li>
                 <li>5. ミドルワーク</li>
                 <li>6. ライトワーク</li>
               </SOption>
               <SInput>
-                <label>Training No.
-                <input type = "number" name = "number" value = {number} onChange = {onChangeNumber} /></label>
+                <label>メニュー番号:
+                <SNumber type = "number" name = "number" value = {number} onChange = {onChangeNumber} /></label>
                 {Error && <SError>{Error}</SError>}<br></br>
               </SInput>
               <SButton onClick = {onClickAdd}>OK</SButton>
             </SLeftBody>
     
             <SRightBody>
-              <SSubTitle>【Today's Exercise】</SSubTitle>
+              <SSubTitle>【エクササイズ】</SSubTitle>
               <SMenuList>
                 {menus.map((menu, index) => (
                   <li key = {menu}>
@@ -62,10 +62,10 @@ export const PTrainingList: FC<Props> = props => {
           </SBody>
     
           <SBottomBody>
-            <SSubTitle>【Exercise Effect】</SSubTitle>
+            <SSubTitle>【運動効果】</SSubTitle>
             <SEffect>
               <SKcalList>
-                {total && <SListTitle>合計{total}消費!!</SListTitle>}
+                {total && <SListTitle>- 合計{total}消費! -</SListTitle>}
                 {kcals.map((kcal, index) => (
                   <li key = {kcal}>
                     <SKcal>{index + 1}.{kcal}</SKcal>
@@ -73,7 +73,7 @@ export const PTrainingList: FC<Props> = props => {
                 ))}
               </SKcalList>
               <SKcalList>
-                {total && <SListTitle>食事換算</SListTitle>}
+                {total && <SListTitle>- 食事換算 -</SListTitle>}
                 {foods.map((food, index) => (
                   <li key = {food}>
                     <SKcal>★{food}</SKcal>
@@ -130,23 +130,35 @@ const SBottomBody = styled.div`
   border-radius: 2%;
 `;
 const SSubTitle = styled.h2`
-  margin-block-start: 0;
+  margin-block-start: 0em;
   margin-top: 8px;
   color: white;
   font-size: 36px;
 `;
+const SGender = styled.p`
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  font-size: 32px;
+  font-weight: bold;
+`;
 const SOption = styled.ul`
-  padding-inline-start: 0;
+  padding-inline-start: 0em;
   list-style: none;
+  font-weight: bold;
 `;
 const SInput = styled.div`
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  margin: 20px 0px;
   font-weight: bold;
 `;
+const SNumber = styled.input`
+  margin-left: 10px;
+  width: 60px;
+  text-align: center;
+`;
 const SError = styled.p`
-  margin : 0;
+  margin : 0px;
   color: red;
   font-weight: bold;
 `;
@@ -200,6 +212,6 @@ const SKcal = styled.p`
 `;
 const SListTitle = styled.li`
   margin-bottom: 10px;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: bold;
 `;
