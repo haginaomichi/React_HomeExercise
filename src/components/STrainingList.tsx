@@ -88,7 +88,7 @@ export const STrainingList: FC<Props> = props => {
 
 const SContainer = styled.div`
   padding: 0px 10px 20px 10px;
-  background-image: url(${process.env.PUBLIC_URL}/image_1.png);
+  background-image: url(${process.env.PUBLIC_URL}/image_2.png);
   background-size: contain;
   background-color: #87ceeb;
   text-align: center;
