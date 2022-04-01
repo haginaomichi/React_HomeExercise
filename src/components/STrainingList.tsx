@@ -101,7 +101,7 @@ const STitle = styled.h1`
   margin-block-end: 0em;
   padding: 20px 0px;
   color: black;
-  font-size: 56px;
+  font-size: 48px;
 `;
 const SBody = styled.div`
   display: block;
@@ -129,7 +129,7 @@ const SSubTitle = styled.h2`
   margin-block-start: 0;
   margin-top: 8px;
   color: white;
-  font-size: 44px;
+  font-size: 36px;
 `;
 const SOption = styled.ul`
   padding-inline-start: 0;
@@ -171,18 +171,16 @@ const SMenuList = styled.ul`
   list-style: none;
 `;
 const SMenu = styled.p`
-  width: 450px;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
   color: white;
-  font-size: 32px;
+  font-size: 30px;
 `;
 const SEffect = styled.div`
   display: block;
 `;
 const SKcalList = styled.ul`
-  width: 390px;
   margin: 0px auto 20px auto;
   padding-inline-start: 0;
   text-align: center;
@@ -197,6 +195,6 @@ const SKcal = styled.p`
 `;
 const SListTitle = styled.li`
   margin-bottom: 10px;
-  font-size: 36px;
+  font-size: 32px;
   font-weight: bold;
 `;
