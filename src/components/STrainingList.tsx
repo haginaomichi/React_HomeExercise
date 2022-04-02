@@ -127,7 +127,7 @@ const SBottomBody = styled.div`
 const SSubTitle = styled.h2`
   margin-block-start: 0em;
   margin-block-end: 0em;
-  margin: 8px 0px;
+  margin: 8px 0px 16px 0px;
   color: #FFFFFF;
   font-size: 36px;
 `;
@@ -195,7 +195,7 @@ const SMenu = styled.p`
 const SMenuDescription = styled.p`
   margin-block-start: 0em;
   margin-block-end: 0em;
-  margin: 0px 0px 20px 10px;
+  margin: 0px 0px 30px 10px;
   text-align: left;
   color: #696969;
   font-size: 24px;
