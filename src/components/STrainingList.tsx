@@ -27,7 +27,7 @@ export const STrainingList: FC<Props> = props => {
     
           <SBody>
             <SLeftBody>
-              <SSubTitle>【メニュー選択】</SSubTitle>
+              <SSubTitle>【 メニュー選択 】</SSubTitle>
               <SGender>- Men -</SGender>
               <SOption>
                 <li>1. ハードワーク</li>
@@ -49,11 +49,12 @@ export const STrainingList: FC<Props> = props => {
             </SLeftBody>
     
             <SRightBody>
-              <SSubTitle>【エクササイズ】</SSubTitle>
+              <SSubTitle>【 エクササイズ 】</SSubTitle>
               <SMenuList>
                 {menus.map((menu, index) => (
                   <li key = {menu}>
-                    <SMenu>{index + 1}.{menu}</SMenu>
+                    {(index + 1) % 2 === 0 && <SMenu>{"- - - "}{menu}</SMenu>}
+                    {(index + 1) % 2 !== 0 && <SMenu>{(index) / 2 + 1}.{menu}</SMenu>}
                   </li>
                 ))}
               </SMenuList>
@@ -62,7 +63,7 @@ export const STrainingList: FC<Props> = props => {
           </SBody>
     
           <SBottomBody>
-            <SSubTitle>【運動効果】</SSubTitle>
+            <SSubTitle>【 運動効果 】</SSubTitle>
             <SEffect>
               <SKcalList>
                 {total && <SListTitle>- 合計{total}消費! -</SListTitle>}
@@ -120,7 +121,7 @@ const SRightBody = styled.div`
   border-radius: 3%;
 `;
 const SBottomBody = styled.div`
-  height: 650px;
+  height: 500px;
   margin: 0px auto;
   border: solid 3px #00b3b3;
   border-radius: 2%;
@@ -180,11 +181,13 @@ const SButton = styled.button`
   }
 `;
 const SMenuList = styled.ul`
-  margin: 0px auto;
+  margin: 0px auto 20px auto;
   padding-inline-start: 0;
   list-style: none;
 `;
 const SMenu = styled.p`
+  margin-block-start: 0em;
+  margin-block-end: 0em;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
@@ -195,7 +198,7 @@ const SEffect = styled.div`
   display: block;
 `;
 const SKcalList = styled.ul`
-  margin: 0px auto 20px auto;
+  margin: 0px auto 50px auto;
   padding-inline-start: 0;
   text-align: center;
   list-style: none;
@@ -203,7 +206,7 @@ const SKcalList = styled.ul`
 const SKcal = styled.p`
   margin-block-start: 0em;
   margin-block-end: 0em;
-  text-align: left;
+  text-align: center;
   color: red;
   font-size: 26px;
 `;

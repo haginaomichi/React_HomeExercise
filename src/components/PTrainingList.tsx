@@ -27,7 +27,7 @@ export const PTrainingList: FC<Props> = props => {
     
           <SBody>
             <SLeftBody>
-              <SSubTitle>【メニュー選択】</SSubTitle>
+              <SSubTitle>【 メニュー選択 】</SSubTitle>
               <SGender>- Men -</SGender>
               <SOption>
                 <li>1. ハードワーク</li>
@@ -49,11 +49,12 @@ export const PTrainingList: FC<Props> = props => {
             </SLeftBody>
     
             <SRightBody>
-              <SSubTitle>【エクササイズ】</SSubTitle>
+              <SSubTitle>【 エクササイズ 】</SSubTitle>
               <SMenuList>
                 {menus.map((menu, index) => (
                   <li key = {menu}>
-                    <SMenu>{index + 1}.{menu}</SMenu>
+                    {(index + 1) % 2 === 0 && <SMenu>{"- - - "}{menu}</SMenu>}
+                    {(index + 1) % 2 !== 0 && <SMenu>{(index) / 2 + 1}.{menu}</SMenu>}
                   </li>
                 ))}
               </SMenuList>
@@ -62,7 +63,7 @@ export const PTrainingList: FC<Props> = props => {
           </SBody>
     
           <SBottomBody>
-            <SSubTitle>【運動効果】</SSubTitle>
+            <SSubTitle>【 運動効果 】</SSubTitle>
             <SEffect>
               <SKcalList>
                 {total && <SListTitle>- 合計{total}消費! -</SListTitle>}
@@ -133,7 +134,7 @@ const SSubTitle = styled.h2`
   margin-block-start: 0em;
   margin-top: 8px;
   color: white;
-  font-size: 36px;
+  font-size: 40px;
 `;
 const SGender = styled.p`
   margin-block-start: 0em;
@@ -184,14 +185,17 @@ const SButton = styled.button`
 `;
 const SMenuList = styled.ul`
   width: 600px;
-  margin: 0 auto;
+  margin: 0px auto 40px auto;
   padding-inline-start: 0;
   list-style: none;
 `;
 const SMenu = styled.p`
+  margin-block-start: 0em;
+  margin-block-end: 0em;
   text-align: left;
   color: white;
   font-size: 32px;
+  font-weight: bold;
 `;
 const SEffect = styled.div`
   display:flex;

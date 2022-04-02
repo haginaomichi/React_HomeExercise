@@ -12,7 +12,7 @@ export const useCustomTraining = () => {
     const addMenu = useCallback((number) => {
         const newMenus = [...menus];
       if (menus !== []){
-        newMenus.splice(0, 3);
+        newMenus.splice(0, 6);
       };
       setError("");
       setCheck(number);
@@ -21,17 +21,17 @@ export const useCustomTraining = () => {
       setHide("");
       setTotal("");
       if (number === 1){
-        newMenus.push("ランニング", "エアロビクス", "縄跳び");
+        newMenus.push("ランニング", "少し速めで!", "エアロビクス", "激しめを意識!", "縄跳び", "細かくステップ!");
       } else if (number === 2){
-        newMenus.push("サイクリング", "ランニング: ゆったり", "階段等で昇降運動");
+        newMenus.push("サイクリング", "少し速めで!", "ランニング: ゆったり", "激しめを意識!", "階段等で昇降運動", "細かくステップ!");
       } else if (number === 3){
-        newMenus.push("スクワット", "ウォーキング", "ラジオ体操");
+        newMenus.push("スクワット", "少し速めで!", "ウォーキング", "激しめを意識!", "ラジオ体操", "細かくステップ!");
       } else if (number === 4){
-        newMenus.push("エアロビクス", "フラフープ", "階段等で昇降運動");
+        newMenus.push("エアロビクス", "少し速めで!", "フラフープ", "激しめを意識!", "階段等で昇降運動", "細かくステップ!");
       } else if (number === 5){
-        newMenus.push("ストレッチ", "ラジオ体操", "入浴");
+        newMenus.push("ストレッチ", "少し速めで!", "ラジオ体操", "激しめを意識!", "入浴", "細かくステップ!");
       } else if (number === 6){
-        newMenus.push("バランスボール", "ヨガ", "ウォーキング");
+        newMenus.push("バランスボール", "少し速めで!", "ヨガ", "激しめを意識!", "ウォーキング", "細かくステップ!");
       } else {
         setMenus([]);
         setError("▲");
