@@ -53,8 +53,8 @@ export const PTrainingList: FC<Props> = props => {
               <SMenuList>
                 {menus.map((menu, index) => (
                   <li key = {menu}>
-                    {(index + 1) % 2 === 0 && <SMenu>{"- - - "}{menu}</SMenu>}
                     {(index + 1) % 2 !== 0 && <SMenu>{(index) / 2 + 1}.{menu}</SMenu>}
+                    {(index + 1) % 2 === 0 && <SMenuDescription>{"- - - "}{menu}</SMenuDescription>}
                   </li>
                 ))}
               </SMenuList>
@@ -101,7 +101,7 @@ const STitle = styled.h1`
   margin-block-start: 0em;
   margin-block-end: 0em;
   padding: 20px 0px;
-  color: black;
+  color: #000000;
   font-size: 56px;
 `;
 const SBody = styled.div`
@@ -133,8 +133,8 @@ const SBottomBody = styled.div`
 const SSubTitle = styled.h2`
   margin-block-start: 0em;
   margin-top: 8px;
-  color: white;
-  font-size: 40px;
+  color: #FFFFFF;
+  font-size: 42px;
 `;
 const SGender = styled.p`
   margin-block-start: 0em;
@@ -160,7 +160,7 @@ const SNumber = styled.input`
 `;
 const SError = styled.p`
   margin : 0px;
-  color: red;
+  color: #FF0000;
   font-weight: bold;
 `;
 const SButton = styled.button`
@@ -169,7 +169,7 @@ const SButton = styled.button`
   padding: 2px 4px;
   background: #00b3b3;
   text-align: center;
-  border: 2px solid #00b3b3;
+  border: solid 2px #00b3b3;
   border-radius: 10%;
   color: #ffffff;
   font-size: 12pt;
@@ -193,17 +193,25 @@ const SMenu = styled.p`
   margin-block-start: 0em;
   margin-block-end: 0em;
   text-align: left;
-  color: white;
-  font-size: 32px;
+  color: #000000;
+  font-size: 36px;
   font-weight: bold;
+`;
+const SMenuDescription = styled.p`
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-left: 10px;
+  text-align: left;
+  color: #696969;
+  font-size: 28px;
 `;
 const SEffect = styled.div`
   display:flex;
 `;
 const SKcalList = styled.ul`
   width: 550px;
-  margin: 0 auto;
-  padding-inline-start: 0;
+  margin: 0px auto;
+  padding-inline-start: 0em;
   text-align: center;
   list-style: none;
 `;
@@ -211,11 +219,11 @@ const SKcal = styled.p`
   margin-block-start: 0em;
   margin-block-end: 0em;
   text-align: center;
-  color: red;
+  color: #FF0000;
   font-size: 32px;
 `;
 const SListTitle = styled.li`
   margin-bottom: 10px;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
 `;

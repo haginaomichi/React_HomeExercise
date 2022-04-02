@@ -53,8 +53,8 @@ export const STrainingList: FC<Props> = props => {
               <SMenuList>
                 {menus.map((menu, index) => (
                   <li key = {menu}>
-                    {(index + 1) % 2 === 0 && <SMenu>{"- - - "}{menu}</SMenu>}
                     {(index + 1) % 2 !== 0 && <SMenu>{(index) / 2 + 1}.{menu}</SMenu>}
+                    {(index + 1) % 2 === 0 && <SMenuDescription>{"-"}{menu}</SMenuDescription>}
                   </li>
                 ))}
               </SMenuList>
@@ -101,7 +101,7 @@ const STitle = styled.h1`
   margin-block-start: 0em;
   margin-block-end: 0em;
   padding: 20px 0px;
-  color: black;
+  color: #000000;
   font-size: 48px;
 `;
 const SBody = styled.div`
@@ -114,14 +114,12 @@ const SLeftBody = styled.div`
   border-radius: 5%;
 `;
 const SRightBody = styled.div`
-  height: 400px;
   margin: 0px auto 20px auto;
   text-align: center;
   border: solid 3px #00b3b3;
   border-radius: 3%;
 `;
 const SBottomBody = styled.div`
-  height: 500px;
   margin: 0px auto;
   border: solid 3px #00b3b3;
   border-radius: 2%;
@@ -130,7 +128,7 @@ const SSubTitle = styled.h2`
   margin-block-start: 0em;
   margin-block-end: 0em;
   margin: 8px 0px;
-  color: white;
+  color: #FFFFFF;
   font-size: 36px;
 `;
 const SGender = styled.p`
@@ -158,7 +156,7 @@ const SNumber = styled.input`
 `;
 const SError = styled.p`
   margin : 0px;
-  color: red;
+  color: #FF0000;
   font-weight: bold;
 `;
 const SButton = styled.button`
@@ -167,7 +165,7 @@ const SButton = styled.button`
   padding: 2px 4px;
   background: #00b3b3;
   text-align: center;
-  border: 2px solid #00b3b3;
+  border: solid 2px #00b3b3;
   border-radius: 10%;
   color: #ffffff;
   font-size: 12pt;
@@ -182,32 +180,41 @@ const SButton = styled.button`
 `;
 const SMenuList = styled.ul`
   margin: 0px auto 20px auto;
-  padding-inline-start: 0;
+  padding-inline-start: 0em;
   list-style: none;
 `;
 const SMenu = styled.p`
   margin-block-start: 0em;
   margin-block-end: 0em;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 10px;
   text-align: left;
-  color: white;
+  color: #000000;
   font-size: 30px;
+  font-weight: bold;
+`;
+const SMenuDescription = styled.p`
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-left: 10px;
+  text-align: left;
+  color: #696969;
+  font-size: 24px;
 `;
 const SEffect = styled.div`
   display: block;
 `;
 const SKcalList = styled.ul`
   margin: 0px auto 50px auto;
-  padding-inline-start: 0;
+  padding-inline-start: 0em;
   text-align: center;
   list-style: none;
 `;
 const SKcal = styled.p`
   margin-block-start: 0em;
   margin-block-end: 0em;
-  text-align: center;
-  color: red;
+  margin-left: 10px;
+  text-align: left;
+  color: #FF0000;
   font-size: 26px;
 `;
 const SListTitle = styled.li`
