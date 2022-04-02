@@ -2,11 +2,11 @@ import { useCallback, useState } from "react";
 
 export const useCustomTraining = () => {
     const [menus, setMenus] = useState<string[]>([]);
-    const [Error, setError] = useState("");
+    const [Error, setError] = useState<string>("");
     const [check, setCheck] = useState<number>();
     const [kcals, setKcals] = useState<string[]>([]);
     const [foods, setFoods] = useState<string[]>([]);
-    const [hide, setHide] = useState('1');
+    const [hide, setHide] = useState<string>("非表示");
     const [total, setTotal] = useState<string>("");
 
     const addMenu = useCallback((number) => {

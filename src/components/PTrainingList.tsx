@@ -132,14 +132,15 @@ const SBottomBody = styled.div`
 `;
 const SSubTitle = styled.h2`
   margin-block-start: 0em;
-  margin-top: 8px;
+  margin-block-end: 0em;
+  margin: 8px 0px 12px 0px;
   color: #FFFFFF;
   font-size: 42px;
 `;
 const SGender = styled.p`
   margin-block-start: 0em;
   margin-block-end: 0em;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
 `;
 const SOption = styled.ul`
@@ -185,7 +186,7 @@ const SButton = styled.button`
 `;
 const SMenuList = styled.ul`
   width: 600px;
-  margin: 0px auto 40px auto;
+  margin: 0px auto;
   padding-inline-start: 0;
   list-style: none;
 `;
@@ -200,10 +201,10 @@ const SMenu = styled.p`
 const SMenuDescription = styled.p`
   margin-block-start: 0em;
   margin-block-end: 0em;
-  margin-left: 10px;
+  margin: 0px 0px 15px 10px;
   text-align: left;
   color: #696969;
-  font-size: 28px;
+  font-size: 32px;
 `;
 const SEffect = styled.div`
   display:flex;

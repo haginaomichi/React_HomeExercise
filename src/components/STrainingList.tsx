@@ -54,7 +54,7 @@ export const STrainingList: FC<Props> = props => {
                 {menus.map((menu, index) => (
                   <li key = {menu}>
                     {(index + 1) % 2 !== 0 && <SMenu>{(index) / 2 + 1}.{menu}</SMenu>}
-                    {(index + 1) % 2 === 0 && <SMenuDescription>{"-"}{menu}</SMenuDescription>}
+                    {(index + 1) % 2 === 0 && <SMenuDescription>{"- -"}{menu}</SMenuDescription>}
                   </li>
                 ))}
               </SMenuList>
